@@ -1,0 +1,10 @@
+*.egg-info
+docs/_build/*
+build/*
+dist/*
+*.pyc
+sample.py
+.tox
+.hellbox
+.venv
+.cache
