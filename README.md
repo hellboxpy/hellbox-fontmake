@@ -15,6 +15,15 @@ with Hellbox("build") as task:
     source >> GenerateTtf() >> task.write("./build/ttf")
 ```
 
+Installation
+------------
+
+Using the [hell CLI](https://github.com/hellboxpy/hell#installation):
+
+```shell
+$ hell install hellbox-fontmake
+```
+
 Development
 -----------
 
