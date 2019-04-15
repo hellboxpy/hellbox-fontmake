@@ -7,7 +7,7 @@ A hellbox job that wraps [`fontmake`](https://github.com/googlei18n/fontmake) fu
 * `GenerateTtf` — converts a UFO into an TTF
 
 ```python
-from hellbox.job.fontmake import GenerateOtf, GenerateTtf
+from hellbox.jobs.fontmake import GenerateOtf, GenerateTtf
 
 with Hellbox("build") as task:
     source = task.read("*.ufo")
