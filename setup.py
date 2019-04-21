@@ -6,7 +6,7 @@ import os
 import sys
 from shutil import rmtree
 
-from setuptools import find_packages, setup, Command
+from setuptools import find_namespace_packages, find_packages, setup, Command
 
 # Package meta-data.
 NAME = "hellbox-fontmake"
@@ -58,12 +58,21 @@ except FileNotFoundError:
 # Load the package's __version__.py module as a dictionary.
 about = {}
 if not VERSION:
-    parent, name = NAME.lower().split('-', 2)
+    parent, name = NAME.lower().split("-", 2)
     project_slug = name.replace("-", "_").replace(" ", "_")
-    with open(os.path.join(here, parent, "jobs", project_slug, "__version__.py")) as f:
+    with open(
+        os.path.join(here, "src", parent, "jobs", project_slug, "__version__.py")
+    ) as f:
         exec(f.read(), about)
 else:
     about["__version__"] = VERSION
+
+# Find packages but exclude known namespaces that should be excluded
+packages = [
+    package
+    for package in find_namespace_packages(where="src")
+    if package not in ["hellbox", "hellbox.jobs"]
+]
 
 
 class UploadCommand(Command):
@@ -102,7 +111,6 @@ class UploadCommand(Command):
 
         sys.exit()
 
-
 # Where the magic happens:
 setup(
     name=NAME,
@@ -114,7 +122,8 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
+    package_dir={"": "src"},
+    packages=packages,
     # If your package is a single module, use this instead of 'packages':
     # py_modules=['mypackage'],
     # entry_points={
