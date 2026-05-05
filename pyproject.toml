@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hellbox-fontmake"
+dynamic = ["version"]
+description = "fontmake job for hellbox."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Jack Jennings", email = "jack@standard-library.com"}]
+requires-python = ">=3.11"
+dependencies = ["hellbox", "fontmake"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Plugins",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Software Development :: Build Tools",
+]
+
+[project.urls]
+Homepage = "https://github.com/hellboxpy/hellbox-fontmake"
+
+[tool.setuptools.dynamic]
+version = {attr = "hellbox.jobs.fontmake.__version__.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = true
+exclude = ["hellbox", "hellbox.jobs"]
