@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hellbox-fontmake"
-dynamic = ["version"]
+version = "0.1.1"
 description = "fontmake job for hellbox."
 readme = "README.md"
 license = {text = "MIT"}
@@ -27,9 +27,6 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://github.com/hellboxpy/hellbox-fontmake"
-
-[tool.setuptools.dynamic]
-version = {attr = "hellbox.jobs.fontmake.__version__.__version__"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
