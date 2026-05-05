@@ -14,7 +14,7 @@ DESCRIPTION = "fontmake job for hellbox."
 URL = "http://github.com/hellboxpy/hellbox-fontmake"
 EMAIL = "jack@standard-library.com"
 AUTHOR = "Jack Jennings"
-REQUIRES_PYTHON = ">=3.6.0"
+REQUIRES_PYTHON = ">=3.11"
 VERSION = None
 LICENSE = "MIT"
 
