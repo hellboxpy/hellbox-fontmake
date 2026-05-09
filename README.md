@@ -21,7 +21,7 @@ Installation
 Using the [hell CLI](https://github.com/hellboxpy/hell#installation):
 
 ```shell
-$ hell install hellbox-fontmake
+$ hell add hellbox-fontmake
 ```
 
 Development
