@@ -1,12 +1,14 @@
-hellbox-fontmake
-================
+# hellbox-fontmake
 
 A hellbox job that wraps [`fontmake`](https://github.com/googlei18n/fontmake) functionality in a chute.
 
-* `GenerateOtf` — converts a UFO into an OTF
-* `GenerateTtf` — converts a UFO into an TTF
+## Usage
+
+- `GenerateOtf` — converts a UFO into an OTF
+- `GenerateTtf` — converts a UFO into a TTF
 
 ```python
+from hellbox import Hellbox
 from hellbox.jobs.fontmake import GenerateOtf, GenerateTtf
 
 with Hellbox("build") as task:
@@ -15,24 +17,15 @@ with Hellbox("build") as task:
     source >> GenerateTtf() >> task.write("./build/ttf")
 ```
 
-Installation
-------------
+## Installation
 
-Using the [hell CLI](https://github.com/hellboxpy/hell#installation):
-
-```shell
-$ hell add hellbox-fontmake
+```sh
+hell add hellbox-fontmake
 ```
 
-Development
------------
+## Development
 
-```shell
-$ pip install -e .
-$ pytest
+```sh
+uv sync
+uv run pytest
 ```
-
-Contributing
-------------
-
-To come...
