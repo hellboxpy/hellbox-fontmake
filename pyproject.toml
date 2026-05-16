@@ -28,6 +28,9 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/hellboxpy/hellbox-fontmake"
 
+[dependency-groups]
+dev = ["mdformat"]
+
 [tool.setuptools.packages.find]
 where = ["src"]
 namespaces = true
