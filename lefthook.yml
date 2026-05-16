@@ -1,0 +1,4 @@
+remotes:
+  - git_url: git@github.com:hellboxpy/gh-actions.git
+    configs:
+      - lefthook.yml
