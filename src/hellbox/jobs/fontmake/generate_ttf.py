@@ -6,6 +6,5 @@ class GenerateTtf(Chute):
         Hellbox.info(f"Generating TTF: {file.name}")
 
         return file.transform(
-            "fontmake -o ttf -u \"{input}\" --output-path \"{output}\"",
-            suffix=".ttf"
+            'fontmake -o ttf -u "{input}" --output-path "{output}"', suffix=".ttf"
         )

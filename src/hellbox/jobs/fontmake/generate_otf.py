@@ -6,6 +6,5 @@ class GenerateOtf(Chute):
         Hellbox.info(f"Generating OTF: {file.name}")
 
         return file.transform(
-            "fontmake -o otf -u \"{input}\" --output-path \"{output}\"",
-            suffix=".otf"
+            'fontmake -o otf -u "{input}" --output-path "{output}"', suffix=".otf"
         )
